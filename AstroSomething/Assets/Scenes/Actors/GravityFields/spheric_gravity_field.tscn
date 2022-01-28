@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Scripts/gravity_field_point.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Materials/gravity_field_spatialmaterial.tres" type="Material" id=2]
+
+
+
+[sub_resource type="SphereShape" id=1]
+
+[sub_resource type="SphereMesh" id=2]
+material = ExtResource( 2 )
+radial_segments = 12
+rings = 12
+
+[node name="SphericGravityField" type="Area"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+mesh = SubResource( 2 )
