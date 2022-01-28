@@ -32,9 +32,13 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Dynamic Gravity Character"
+config/name="ASSteroid"
 run/main_scene="res://Assets/Scenes/Zones/main_scene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [input]
 
