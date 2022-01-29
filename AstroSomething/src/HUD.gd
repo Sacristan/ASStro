@@ -131,19 +131,16 @@ func updateGasbar(gas):
 	gasTexture.texture = getGasTex(gas);
 #
 func getGasTex(gas):
-	if(gas > 0.8):
+	if(gas > 0.7):
 		return gasTextures[0];
-	elif(gas < 0.8 && gas > 0.6):
+	elif(gas < 0.7 && gas > 0.5):
 		return gasTextures[1];	
-	elif(gas < 0.6 && gas > 0.4):
+	elif(gas < 0.5 && gas > 0.3):
 		return gasTextures[2];	
-	elif(gas < 0.4 && gas > 0.2):
+	elif(gas < 0.3 && gas > 0.01):
 		return gasTextures[3];	
-	elif(gas < 0.2 && gas > 0.01):
-		return gasTextures[4]
 	elif(gas < 0.01):
-		return gasTextures[5];	
-		
+		return gasTextures[4];	
 		
 func onGameWon():
 	gameOverBase()
