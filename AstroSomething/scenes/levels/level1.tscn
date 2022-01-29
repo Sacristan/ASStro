@@ -9,8 +9,6 @@
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 4 )
 
-[node name="HUD" parent="." instance=ExtResource( 5 )]
-
 [node name="LevelBounds" type="CSGBox" parent="."]
 transform = Transform( 209.908, 0, 0, 0, 100, 0, 0, 0, 178.1, 6.82033, 0.226036, 38.0934 )
 visible = false
@@ -32,3 +30,5 @@ transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
 
 [node name="Planetoid2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, -51.2572, 30.2203, 76.2136 )
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
