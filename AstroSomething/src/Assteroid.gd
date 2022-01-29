@@ -4,6 +4,7 @@ class_name Assteroid
 signal onExplode(assteroid)
 
 var explosive
+onready var particle = $Particle
 
 func explode():
 	pass
@@ -14,6 +15,7 @@ func assign_explosive(explosive):
 	explosive.connect("onExplode", self, "onExplosiveExploded")
 	
 func onExplosiveExploded():
+	particle.emitting = true
 	print("Asteroid BOOM")
 	emit_signal("onExplode", self)
 	yield(Global.wait(1),"timeout")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/Assteroid.gd" type="Script" id=1]
 [ext_resource path="res://_reference/Materials/gravity_field_spatialmaterial.tres" type="Material" id=2]
 [ext_resource path="res://scenes/actors/props/ASSteroidMat.tres" type="SphereMesh" id=3]
 [ext_resource path="res://_reference/Scripts/gravity_field_point.gd" type="Script" id=4]
+[ext_resource path="res://scenes/particles/ExplosionParticle.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -13,6 +14,9 @@ radial_segments = 12
 rings = 12
 
 [sub_resource type="SphereShape" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+vertex_color_use_as_albedo = true
 
 [node name="ASSteroid" type="Area"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 19.9999, 9.18611, -9.94676 )
@@ -35,3 +39,9 @@ shape = SubResource( 7 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Body"]
 mesh = ExtResource( 3 )
+
+[node name="Particle" parent="Body" instance=ExtResource( 5 )]
+material_override = SubResource( 8 )
+amount = 56
+explosiveness = 0.17
+visibility_aabb = AABB( -1, -1, -1, 2, 2, 2 )
