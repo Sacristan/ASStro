@@ -2,6 +2,7 @@ extends Spatial
 class_name GameManager
 
 onready var aabb = $LevelBounds
+onready var rootNode = get_node("/root")
 
 signal onGameOver
 var gameOver = false
