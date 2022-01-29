@@ -1,11 +1,11 @@
 extends Spatial
 
-const Timeout = 5
+export(float) var explosionTimeout = 5
 
 signal onExplode()
 
 func _ready():
-	yield(Global.wait(Timeout),"timeout")
+	yield(Global.wait(explosionTimeout),"timeout")
 	boom()
 
 func boom():

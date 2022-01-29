@@ -29,16 +29,21 @@ func left_asteroid(asteroid):
 		currentAssteroid = null
 
 func tryPlaceExplosive():
-	if(!canPlaceExplosive):
+	if(!is_on_floor() || !canPlaceExplosive || currentAssteroid==null):
 		return
+	
 	canPlaceExplosive = false
 	placeExplosive()
 	
 func placeExplosive():
 	var explosive = Explosive.instance()
-	Global.gameManager.rootNode.add_child(explosive)
+	
+	var asteroidBody = currentAssteroid.get_node("Body")
+	asteroidBody.assign_explosive(explosive)
+	
 	explosive.global_transform.origin = getPlacementPos()
 	explosive.global_transform.basis = global_transform.basis
+	
 	explosive.connect("onExplode", self, "onExplosiveExploded")
 	
 func onExplosiveExploded():
