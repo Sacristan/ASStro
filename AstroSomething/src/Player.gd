@@ -6,17 +6,43 @@ const LayerMask = 0b00000000000000000010 #assteroids
 const Explosive = preload("res://scenes/actors/props/Dynamite.tscn")
 
 var currentAsteroid = null
+var queued_asteroid = null
+
+const healthDeductPerSecond = 0.1 #10 perc health rem/s
+const healthRegenRate = healthDeductPerSecond * 0.5 #30perc per second
+const healthRegenTimeout = 3 #seconds after regen starts working
+
+var health = 1.0
+var lastTimeReceivedDamage = 0
+var currentTime = 0
+
+signal onDied()
+signal onHealthChanged(health)
+signal onDamageReceived(health)
+
+var died = false
 
 func _ready():
 	Global.player = self
 
+func _process(delta):
+	currentTime+=delta
+	
+	if(is_on_assteroid() && is_on_floor()):
+		deductHealth(delta)
+		emit_signal("onDamageReceived", health)
+	
+	if lastTimeReceivedDamageDelta() >= healthRegenTimeout:
+		regenerateHealth(delta)
+		
 func _input(event):
 	._input(event)
 	
 	if(Input.is_action_just_pressed(attack_command)):
 		tryPlaceExplosive()
 
-var queued_asteroid = null
+func lastTimeReceivedDamageDelta():
+	return currentTime - lastTimeReceivedDamage
 
 func entered_asteroid(asteroid):
 #	print("asteroid enter: " + str(asteroid))
@@ -74,3 +100,23 @@ func is_on_planetoid():
 
 func is_safe():
 	return is_on_planetoid() && is_on_floor()
+
+func regenerateHealth(delta):
+	updateHealth(clamp(health+healthRegenRate*delta, 0, 1) )
+	
+func deductHealth(delta):
+	updateHealth(clamp(health-healthDeductPerSecond*delta, 0, 1))
+	lastTimeReceivedDamage = currentTime
+	
+	if(health <= 0):
+		die()
+	
+func updateHealth(health):
+	self.health = health
+	emit_signal("onHealthChanged", health)
+	
+func die():
+	died = true
+	set_process(false)
+	set_physics_process(false)
+	emit_signal("onDied")

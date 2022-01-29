@@ -10,6 +10,8 @@ signal onGameOver
 var gameOver = false
 var assteroids = []
 
+var currentTime = 0
+
 func _ready():
 	Global.gameManager = self
 	Global.enableCursor(false)
@@ -18,8 +20,16 @@ func _ready():
 	yield(Global.wait(1), "timeout")
 	set_physics_process(true)
 	
-	connect("onGameOver", self, "gameOver")
+	Global.player.connect("onDied", self, "gameOver")
 	findAllAssteroids()
+
+func _process(delta):
+	currentTime+=delta
+		
+func _physics_process(delta):
+	if(!gameOver && !testPlayerBounds()):
+		gameOver = true
+		gameOver()
 	
 func findAllAssteroids():
 	for child in get_children():
@@ -28,11 +38,6 @@ func findAllAssteroids():
 			assteroids.append(body)
 			body.connect("onExplode", self, "onAssteroidExploded")
 			
-func _physics_process(delta):
-	if(!gameOver && !testPlayerBounds()):
-		gameOver = true
-		emit_signal("onGameOver")
-	
 func testPlayerBounds():
 	var playerBounds = AABB(Global.player.global_transform.origin, Vector3.ONE)
 	var intersects: bool = aabb.get_transformed_aabb().intersects(playerBounds)
@@ -64,11 +69,9 @@ func checkGameWon():
 
 func gameOver():
 	yield(Global.wait(1), "timeout")
-	Global.retryGame()
+	emit_signal("onGameOver")
 
 func gameWon():
-	Global.player.disconnect("got_safe", self, "gameWon")
-	emit_signal("onGameWon")
 	print("Game Won")
 	yield(Global.wait(2), "timeout")
-	Global.retryGame()
+	emit_signal("onGameWon")
