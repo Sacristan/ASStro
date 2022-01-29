@@ -31,15 +31,16 @@ func left_asteroid(asteroid):
 func tryPlaceExplosive():
 	if(!is_on_floor() || !canPlaceExplosive || currentAssteroid==null):
 		return
-	
-	canPlaceExplosive = false
-	placeExplosive()
-	
-func placeExplosive():
-	var explosive = Explosive.instance()
-	
+
 	var asteroidBody = currentAssteroid.get_node("Body")
-	asteroidBody.assign_explosive(explosive)
+	
+	if(asteroidBody is Assteroid):
+		canPlaceExplosive = false
+		placeExplosiveOn(asteroidBody)
+	
+func placeExplosiveOn(body):
+	var explosive = Explosive.instance()
+	body.assign_explosive(explosive)
 	
 	explosive.global_transform.origin = getPlacementPos()
 	explosive.global_transform.basis = global_transform.basis

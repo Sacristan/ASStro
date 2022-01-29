@@ -28,4 +28,4 @@ transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 75.0484 )
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
 
 [node name="Planetoid2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, -58.9887, 9.18611, 76.2136 )
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, -56.5455, 9.18611, 76.2136 )

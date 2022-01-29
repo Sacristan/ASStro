@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Assteroid",
+"language": "GDScript",
+"path": "res://src/Assteroid.gd"
+}, {
 "base": "Spatial",
 "class": "GameManager",
 "language": "GDScript",
@@ -29,16 +34,23 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://_reference/Scripts/kinematic_character_with_exported_attributes.gd"
 }, {
+"base": "KinematicBody",
+"class": "Planetoid",
+"language": "GDScript",
+"path": "res://src/Planetoid.gd"
+}, {
 "base": "KinematicCharacterWithExportedAttributes",
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Player.gd"
 } ]
 _global_script_class_icons={
+"Assteroid": "",
 "GameManager": "",
 "GravityField": "",
 "KinematicCharacter": "",
 "KinematicCharacterWithExportedAttributes": "",
+"Planetoid": "",
 "Player": ""
 }
 
