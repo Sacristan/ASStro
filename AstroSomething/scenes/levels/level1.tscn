@@ -8,7 +8,7 @@
 script = ExtResource( 4 )
 
 [node name="LevelBounds" type="CSGBox" parent="."]
-transform = Transform( 114.433, 0, 0, 0, 100, 0, 0, 0, 174.43, -0.35482, 0, 35.7541 )
+transform = Transform( 114.433, 0, 0, 0, 100, 0, 0, 0, 174.43, -0.477142, 0.226036, 35.6863 )
 visible = false
 width = 1.0
 height = 1.0
@@ -18,7 +18,7 @@ depth = 1.0
 transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
 
 [node name="ASSteroid2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 81.1147 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 75.0484 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95534, 34.5094, -5.25071 )

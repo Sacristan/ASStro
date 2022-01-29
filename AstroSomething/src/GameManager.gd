@@ -7,16 +7,18 @@ signal onGameOver
 var gameOver = false
 
 func _ready():
+	Global.gameManager = self
+	
 	set_physics_process(false)
 	yield(Global.wait(1), "timeout")
 	set_physics_process(true)
+	
+	connect("onGameOver", self, "gameOver")
 	
 func _physics_process(delta):
 	if(!gameOver && !testPlayerBounds()):
 		gameOver = true
 		emit_signal("onGameOver")
-		yield(Global.wait(1), "timeout")
-		retryGame()
 	
 func testPlayerBounds():
 	var playerBounds = AABB(Global.player.global_transform.origin, Vector3.ONE)
@@ -24,5 +26,6 @@ func testPlayerBounds():
 #	print("intersects %s"%intersects)
 	return intersects
 
-func retryGame():
-	get_tree().reload_current_scene()
+func gameOver():
+	yield(Global.wait(1), "timeout")
+	Global.retryGame()
