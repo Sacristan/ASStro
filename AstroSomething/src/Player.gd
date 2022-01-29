@@ -16,11 +16,21 @@ func _input(event):
 	if(Input.is_action_just_pressed(attack_command)):
 		tryPlaceExplosive()
 
+var queued_asteroid = null
+
 func entered_asteroid(asteroid):
-	if(asteroid):
-		currentAsteroid = asteroid
+#	print("asteroid enter: " + str(asteroid))
 	
-		print(asteroid)
+	if(asteroid):
+		queued_asteroid = asteroid
+		
+		while(!is_on_floor()):
+#			print("tick enter asteroid "+str(asteroid))
+			yield(Global.wait(0.1),"timeout")
+				
+		if(queued_asteroid == asteroid):
+			currentAsteroid = queued_asteroid
+#			print("assign asteroid: "+str(queued_asteroid))
 	
 func left_asteroid(asteroid):
 	if(currentAsteroid == asteroid):

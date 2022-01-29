@@ -2,12 +2,14 @@
 
 [ext_resource path="res://scenes/actors/props/ASSteroid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/actors/chars/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/actors/props/Planetoid.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/GameManager.gd" type="Script" id=4]
-[ext_resource path="res://scenes/actors/props/Planetoid.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 4 )
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="LevelBounds" type="CSGBox" parent="."]
 transform = Transform( 209.908, 0, 0, 0, 100, 0, 0, 0, 178.1, 6.82033, 0.226036, 38.0934 )
@@ -16,66 +18,8 @@ width = 1.0
 height = 1.0
 depth = 1.0
 
-[node name="HUD" parent="." instance=ExtResource( 3 )]
-
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.9029, 40.9564, 21.7418 )
-mouse_smoothness = null
-yaw_limit = null
-pitch_limit = null
-vertical_mouse_sensitivity = null
-horizontal_mouse_sensitivity = null
-base_view_up_type = null
-custom_base_view_up_direction = null
-max_slides_per_iteration = null
-max_speed = null
-minimal_movement_input = null
-on_floor_control_speed = null
-on_floor_control_acceleration = null
-attacking_control_speed = null
-attacking_control_acceleration = null
-falling_control_speed = null
-falling_control_acceleration = null
-falling_speed = null
-falling_speed_factor_on_attached_wall = null
-stop_on_slope_when_landing = null
-gravity_scale = null
-ignore_gravity_if_apply_additional_gravity_impulse = null
-floor_normal_type = null
-custom_floor_normal = null
-floor_max_angle = null
-floor_min_distance = null
-floor_max_distance = null
-apply_gravity_impulse_on_walking = null
-maintain_horizontal_velocity_walking = null
-friction = null
-floor_friction_calculation_mode = null
-floor_jump_impulse = null
-floor_jump_speed = null
-floor_jump_time = null
-attach_to_wall = null
-attached_wall_jump_impulse = null
-attached_wall_jump_speed = null
-attached_wall_jump_time = null
-attached_wall_jumps = null
-air_jump_impulse = null
-air_jump_speed = null
-air_jump_time = null
-air_jumps = null
-stop_jumping_on_ceiling = null
-apply_gravity_in_jump = null
-physics_rotation_up_direction_type = null
-custom_physics_rotation_up_direction = null
-vertical_physics_rotation_update_velocity = null
-horizontal_physics_rotation_update_type = null
-horizontal_physics_rotation_update_velocity = null
-rotate_to_attached_wall = null
-attack_command = null
-move_forward_command = null
-move_back_command = null
-move_right_command = null
-move_left_command = null
-jump_command = null
 
 [node name="ASSteroid" parent="." instance=ExtResource( 1 )]
 transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
@@ -83,8 +27,8 @@ transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
 [node name="ASSteroid2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 75.0484 )
 
-[node name="Planetoid" parent="." instance=ExtResource( 5 )]
+[node name="Planetoid" parent="." instance=ExtResource( 3 )]
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
 
-[node name="Planetoid2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, -56.5455, 9.18611, 76.2136 )
+[node name="Planetoid2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, -51.2572, 30.2203, 76.2136 )

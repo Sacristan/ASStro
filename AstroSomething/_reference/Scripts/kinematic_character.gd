@@ -44,10 +44,11 @@ class Surface:
 	
 	
 	func friction() -> float:
-		if collider.get("physics_material_override") and collider.physics_material_override is PhysicsMaterial:
-			return collider.physics_material_override.friction
-		if collider.get("friction") and collider.friction is float:
-			return collider.friction
+		if(collider && is_instance_valid(collider)):
+			if collider.get("physics_material_override") and collider.physics_material_override is PhysicsMaterial:
+				return collider.physics_material_override.friction
+			if collider.get("friction") and collider.friction is float:
+				return collider.friction
 		return 1.0
 
 
