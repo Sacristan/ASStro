@@ -4,7 +4,7 @@ onready var healthLabel = $upperbar/Health/HealthLabel
 onready var waveLabel = $upperbar/Wave/WaveLabel
 onready var scoreLabel = $upperbar/Score/ScoreLabel
 
-onready var energyProgress = $lowerbar/weaponEnergy/weaponEnergyProgress
+onready var gasProgress = $GasBar/MarginContainer/TextureProgress
 
 onready var gameOverPanel = $gameOver
 onready var retryButton = $gameOver/VBoxContainer/retryButton
@@ -58,6 +58,8 @@ func _process(delta):
 	var t
 	var alpha = 0
 	
+	updateEnergy(timeDelta)
+	
 	if timeDelta < DamageIndicationAppearTime:
 		appearTimer+=delta
 		t = appearTimer / DamageIndicationAppearTime
@@ -93,13 +95,13 @@ func updateScore(score):
 	scoreLabel.text = "Score: %d"%score
 	
 func updateEnergy(energy):
-	energyProgress.value = lerp(0, 100, energy)
+	gasProgress.value = lerp(0, 100, energy)
 	
 func onGameOver():
 	healthLabel.hide()
 	waveLabel.hide()
 	scoreLabel.hide()
-	energyProgress.hide()
+	gasProgress.hide()
 	gameOverPanel.show()
 	
 func onPauseToggled(isPause):
