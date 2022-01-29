@@ -36,6 +36,9 @@ const DamageIndicationDissapearTime = 3
 var lastTimeDamageReceived = 0
 var appearTimer = 0
 
+enum State { None, Pause, Victory, Lose }
+var state = State.None
+
 func _ready():
 	pauseMenu.visible = false
 	gameOverPanel.visible = false
@@ -74,6 +77,16 @@ func _ready():
 	
 	set_process(false)
 	update_damage_alpha(0)
+	
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		match event.scancode:
+			KEY_SPACE:
+				match(state):
+					State.Lose:
+						Global.retryGame()
+					State.Victory:
+						Global.nextLevel()
 
 func _process(delta):
 	var timeDelta = Global.gameManager.currentTime - lastTimeDamageReceived
@@ -137,11 +150,13 @@ func onGameWon():
 	gameOverVictoryContainer.show()
 	gameOverLostContainer.hide()
 	scoreVictory.text = "Time: %10.2f secs"%Global.gameManager.currentTime 
+	state = State.Victory
 	
 func onGameOver():
 	gameOverBase()
 	gameOverVictoryContainer.hide()
 	gameOverLostContainer.show()
+	state = State.Lose
 	
 func gameOverBase():
 	Global.stateManager.disconnect("onPause", self, "onPauseToggled")
@@ -157,6 +172,8 @@ func gameOverBase():
 	
 func onPauseToggled(isPause):
 	if(isPause):
+		state = State.Pause
 		pauseMenu.show()
 	else:
+		state = State.None
 		pauseMenu.hide()

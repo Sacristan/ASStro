@@ -98,6 +98,7 @@ shader_param/Alpha = 0.0
 shader_param/TextureUniform = ExtResource( 5 )
 
 [node name="HUD" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
