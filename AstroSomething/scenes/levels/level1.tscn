@@ -7,7 +7,7 @@
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 4 )
 
-[node name="AABB" type="CSGBox" parent="."]
+[node name="LevelBounds" type="CSGBox" parent="."]
 transform = Transform( 114.433, 0, 0, 0, 100, 0, 0, 0, 174.43, -0.35482, 0, 35.7541 )
 visible = false
 width = 1.0

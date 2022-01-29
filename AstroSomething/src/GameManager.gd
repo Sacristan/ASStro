@@ -1,7 +1,7 @@
 extends Spatial
 class_name GameManager
 
-onready var aabb = $AABB
+onready var aabb = $LevelBounds
 
 func _ready():
 	set_physics_process(false)
