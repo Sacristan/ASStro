@@ -281,7 +281,7 @@ func _update_vertical_direction(var jump_normal:Vector3, floor_normal:Vector3):
 					_vertical_direction = -gravitational_impulse_normal
 
 func _update_rotation_on_current_floor() -> void:
-	if current_floor && is_instance_valid(current_floor):
+	if current_floor && is_instance_valid(current_floor) && is_instance_valid(current_floor.collider):
 		var global_transform_basis = global_transform.basis.orthonormalized()
 		var up = global_transform_basis.xform(Vector3.UP).normalized()
 		var forward = global_transform_basis.xform(Vector3.FORWARD).normalized()

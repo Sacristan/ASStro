@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/Assteroid.gd" type="Script" id=1]
+[ext_resource path="res://src/Planetoid.gd" type="Script" id=1]
 [ext_resource path="res://_reference/Materials/gravity_field_spatialmaterial.tres" type="Material" id=2]
-[ext_resource path="res://scenes/actors/props/ASSteroidMat.tres" type="SphereMesh" id=3]
+[ext_resource path="res://scenes/actors/props/PlanetoidMat.tres" type="Material" id=3]
 [ext_resource path="res://_reference/Scripts/gravity_field_point.gd" type="Script" id=4]
 
 [sub_resource type="SphereShape" id=1]
@@ -14,7 +14,10 @@ rings = 12
 
 [sub_resource type="SphereShape" id=7]
 
-[node name="ASSteroid" type="Area"]
+[sub_resource type="SphereMesh" id=8]
+material = ExtResource( 3 )
+
+[node name="Planetoid" type="Area"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 19.9999, 9.18611, -9.94676 )
 collision_layer = 3
 script = ExtResource( 4 )
@@ -34,4 +37,4 @@ script = ExtResource( 1 )
 shape = SubResource( 7 )
 
 [node name="CSGMesh" type="CSGMesh" parent="Body"]
-mesh = ExtResource( 3 )
+mesh = SubResource( 8 )

@@ -112,14 +112,30 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -147.281
-margin_top = -115.0
-margin_right = -20.2806
-margin_bottom = -84.0
+margin_left = -144.0
+margin_top = -46.0
+margin_right = -16.9996
+margin_bottom = -15.0
 custom_fonts/font = SubResource( 18 )
 text = "ALL RIGHTS UNLIMITED
 MADE IN GODOT 3.4.2"
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="MenuUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = -73.0
+margin_right = 153.0
+margin_bottom = -21.0
+custom_fonts/font = SubResource( 18 )
+text = "Controls:
+
+Jump: LMB/SPACE
+Place bomb: RMB"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -129,10 +145,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -82.0
-margin_top = -77.0
-margin_right = -21.0
-margin_bottom = -21.0
+margin_left = -78.0
+margin_top = -108.0
+margin_right = -17.0
+margin_bottom = -52.0
 texture = ExtResource( 3 )
 expand = true
 __meta__ = {
