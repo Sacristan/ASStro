@@ -39,7 +39,7 @@ transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 13.4705, 23.7191, 12.3144 )
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 53.5289, 72.2624, 12.3144 )
 
 [node name="ASSteroid5" parent="." instance=ExtResource( 1 )]
-transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, 113.468, 0.376125, 12.3144 )
+transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 121.175, 0.376125, 12.3144 )
 
 [node name="Planetoid" parent="." instance=ExtResource( 3 )]
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
