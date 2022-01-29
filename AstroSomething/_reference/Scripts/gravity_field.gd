@@ -8,6 +8,7 @@ func get_acceleration(squared_distance:float) -> float: return 9.8
 
 func _ready():
 	connect("body_entered", self, "_on_body_entered")
+	connect("body_exited", self, "_on_body_exited")
 
 func _physics_process(delta):
 	apply_acceleration_to_overlapping_bodies()
@@ -15,6 +16,13 @@ func _physics_process(delta):
 func _on_body_entered(body):
 	if body is KinematicCharacter:
 		body.end_jumping()
+		
+	if body is Player:
+		body.entered_asteroid(self)
+
+func _on_body_exited(body):
+	if body is Player:
+		body.left_asteroid(self)
 
 func apply_acceleration_to_kinematic_character(kinect_character:KinematicCharacter):
 	var kinect_character_position:Vector3 = kinect_character.global_transform.origin

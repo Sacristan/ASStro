@@ -7,6 +7,8 @@ const Explosive = preload("res://scenes/actors/props/Dynamite.tscn")
 
 var canPlaceExplosive = true
 
+var currentAssteroid = null
+
 func _ready():
 	Global.player = self
 
@@ -15,6 +17,16 @@ func _input(event):
 	
 	if(Input.is_action_just_pressed(attack_command)):
 		tryPlaceExplosive()
+
+func entered_asteroid(asteroid):
+	if(asteroid):
+		currentAssteroid = asteroid
+		
+	print(asteroid)
+	
+func left_asteroid(asteroid):
+	if(currentAssteroid == asteroid):
+		currentAssteroid = null
 
 func tryPlaceExplosive():
 	if(!canPlaceExplosive):
