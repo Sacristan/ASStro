@@ -20,8 +20,6 @@ func _ready():
 	yield(Global.wait(1), "timeout")
 	set_physics_process(true)
 	
-	connect("onGameOver", self, "gameOver")
-	
 	Global.player.connect("onDied", self, "gameOver")
 	findAllAssteroids()
 
@@ -31,7 +29,7 @@ func _process(delta):
 func _physics_process(delta):
 	if(!gameOver && !testPlayerBounds()):
 		gameOver = true
-		emit_signal("onGameOver")
+		gameOver()
 	
 func findAllAssteroids():
 	for child in get_children():
@@ -71,10 +69,9 @@ func checkGameWon():
 
 func gameOver():
 	yield(Global.wait(1), "timeout")
-#	Global.retryGame()
+	emit_signal("onGameOver")
 
 func gameWon():
-	emit_signal("onGameWon")
 	print("Game Won")
 	yield(Global.wait(2), "timeout")
-	Global.retryGame()
+	emit_signal("onGameWon")

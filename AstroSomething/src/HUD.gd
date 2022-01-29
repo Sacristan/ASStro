@@ -7,9 +7,16 @@ export(Array, Texture) var gasTextures;
 #onready var scoreLabel = $upperbar/Score/ScoreLabel
 #
 onready var gameOverPanel = $gameOver
-onready var retryButton = $gameOver/VBoxContainer/retryButton
-onready var menuButtonGameOver = $gameOver/VBoxContainer/menuButton
-onready var quitButtonGameOver = $gameOver/VBoxContainer/quitButton
+
+onready var gameOverLostContainer = $gameOver/lost
+onready var retryButtonGameOver = $gameOver/lost/retryButton
+onready var menuButtonGameOver = $gameOver/lost/menuButton
+onready var quitButtonGameOver = $gameOver/lost/quitButton
+
+onready var gameOverVictoryContainer = $gameOver/victory
+onready var nextButtonGameWin = $gameOver/victory/nextButton
+onready var retryButtonGameWin = $gameOver/victory/retryButton
+onready var menuButtonGameWin = $gameOver/victory/menuButton
 
 onready var pauseMenu = $pauseMenu
 onready var menuButtonPause = $pauseMenu/VBoxContainer/menuButton
@@ -47,9 +54,16 @@ func _ready():
 #	gameManager.connect("onScoreChanged", self, "updateScore")
 
 	Global.gameManager.connect("onGameOver", self, "onGameOver")
-	retryButton.connect("pressed", Global, "retryGame")
+	Global.gameManager.connect("onGameWon", self, "onGameWon")
+	
+	nextButtonGameWin.connect("pressed", Global, "nextLevel")
+	
+	retryButtonGameOver.connect("pressed", Global, "retryGame")
+	retryButtonGameWin.connect("pressed", Global, "retryGame")
 #
 	menuButtonGameOver.connect("pressed", Global, "launchMenu")
+	menuButtonGameWin.connect("pressed", Global, "launchMenu")
+	
 	quitButtonGameOver.connect("pressed", Global, "quitGame")
 	
 	menuButtonPause.connect("pressed", Global, "launchMenu")
@@ -116,7 +130,18 @@ func getGasTex(gas):
 	elif(gas < 0.01):
 		return gasTextures[5];	
 		
+		
+func onGameWon():
+	gameOverBase()
+	gameOverVictoryContainer.show()
+	gameOverLostContainer.hide()
+	
 func onGameOver():
+	gameOverBase()
+	gameOverVictoryContainer.hide()
+	gameOverLostContainer.show()
+	
+func gameOverBase():
 	Global.stateManager.disconnect("onPause", self, "onPauseToggled")
 	
 #	healthLabel.hide()
