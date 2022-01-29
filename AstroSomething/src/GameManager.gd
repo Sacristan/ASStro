@@ -4,9 +4,10 @@ class_name GameManager
 onready var aabb = $LevelBounds
 onready var rootNode = get_node("/root")
 
+signal onGameWon
 signal onGameOver
-var gameOver = false
 
+var gameOver = false
 var assteroids = []
 
 func _ready():
@@ -48,8 +49,11 @@ func onAssteroidExploded(assteroid):
 		gameWon()
 		
 func gameWon():
+	emit_signal("onGameWon")
 	print("Game Won")
+	yield(Global.wait(1), "timeout")
+	Global.retryGame()
 
 func gameOver():
-	yield(Global.wait(1), "timeout")
+	yield(Global.wait(2), "timeout")
 	Global.retryGame()

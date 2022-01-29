@@ -5,8 +5,6 @@ const LayerMask = 0b00000000000000000010 #assteroids
 #export(AnimationPlayer) var IntersectLayer
 const Explosive = preload("res://scenes/actors/props/Dynamite.tscn")
 
-var canPlaceExplosive = true
-
 var currentAssteroid = null
 
 func _ready():
@@ -29,13 +27,12 @@ func left_asteroid(asteroid):
 		currentAssteroid = null
 
 func tryPlaceExplosive():
-	if(!is_on_floor() || !canPlaceExplosive || currentAssteroid==null):
+	if(!is_on_floor() || currentAssteroid==null):
 		return
 
 	var asteroidBody = currentAssteroid.get_node("Body")
 	
-	if(asteroidBody is Assteroid):
-		canPlaceExplosive = false
+	if(asteroidBody is Assteroid && !asteroidBody.has_explosive()):
 		placeExplosiveOn(asteroidBody)
 	
 func placeExplosiveOn(body):
@@ -44,11 +41,6 @@ func placeExplosiveOn(body):
 	
 	explosive.global_transform.origin = getPlacementPos()
 	explosive.global_transform.basis = global_transform.basis
-	
-	explosive.connect("onExplode", self, "onExplosiveExploded")
-	
-func onExplosiveExploded():
-	canPlaceExplosive = true
 	
 func getPlacementPos():
 	var pos = global_transform.origin
