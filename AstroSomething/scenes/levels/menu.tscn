@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Fonts/AldotheApache.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Fonts/GameFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/AldotheApache.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://fonts/GameFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://godot.png" type="Texture" id=3]
 [ext_resource path="res://src/Menu.gd" type="Script" id=4]
 
