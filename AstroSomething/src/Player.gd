@@ -19,7 +19,7 @@ func _input(event):
 func tryPlaceExplosive():
 	if(!canPlaceExplosive):
 		return
-	canPlaceExplosive = true
+	canPlaceExplosive = false
 	placeExplosive()
 	
 func placeExplosive():
@@ -27,6 +27,10 @@ func placeExplosive():
 	Global.gameManager.rootNode.add_child(explosive)
 	explosive.global_transform.origin = getPlacementPos()
 	explosive.global_transform.basis = global_transform.basis
+	explosive.connect("onExplode", self, "onExplosiveExploded")
+	
+func onExplosiveExploded():
+	canPlaceExplosive = true
 	
 func getPlacementPos():
 	var pos = global_transform.origin
