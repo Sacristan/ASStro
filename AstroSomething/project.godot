@@ -12,17 +12,17 @@ _global_script_classes=[ {
 "base": "Area",
 "class": "GravityField",
 "language": "GDScript",
-"path": "res://Assets/Scripts/gravity_field.gd"
+"path": "res://_reference/Scripts/gravity_field.gd"
 }, {
 "base": "KinematicBody",
 "class": "KinematicCharacter",
 "language": "GDScript",
-"path": "res://Assets/Scripts/kinematic_character.gd"
+"path": "res://_reference/Scripts/kinematic_character.gd"
 }, {
 "base": "KinematicCharacter",
 "class": "KinematicCharacterWithExportedAttributes",
 "language": "GDScript",
-"path": "res://Assets/Scripts/kinematic_character_with_exported_attributes.gd"
+"path": "res://_reference/Scripts/kinematic_character_with_exported_attributes.gd"
 } ]
 _global_script_class_icons={
 "GravityField": "",
@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ASSteroid"
-run/main_scene="res://Assets/Scenes/Zones/main_scene.tscn"
+run/main_scene="res://scenes/levels/level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]

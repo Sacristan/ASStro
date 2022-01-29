@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Scripts/spring.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Materials/red_spatialmaterial.tres" type="Material" id=2]
-[ext_resource path="res://Assets/Materials/black_spaltialmaterial.tres" type="Material" id=3]
+[ext_resource path="res://_reference/Scripts/spring.gd" type="Script" id=1]
+[ext_resource path="res://_reference/Materials/red_spatialmaterial.tres" type="Material" id=2]
+[ext_resource path="res://_reference/Materials/black_spaltialmaterial.tres" type="Material" id=3]
 
 [sub_resource type="CylinderShape" id=1]
 
