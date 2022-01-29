@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/actors/props/ASSteroid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/actors/chars/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/GameManager.gd" type="Script" id=4]
 
 [node name="Spatial" type="Spatial"]
@@ -22,3 +23,5 @@ transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 75.0484 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95534, 34.5094, -5.25071 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
