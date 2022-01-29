@@ -7,13 +7,13 @@ export(Array, Texture) var gasTextures;
 #onready var scoreLabel = $upperbar/Score/ScoreLabel
 #
 onready var gameOverPanel = $gameOver
-#onready var retryButton = $gameOver/VBoxContainer/retryButton
-#onready var menuButtonGameOver = $gameOver/VBoxContainer/menuButton
-#onready var quitButtonGameOver = $gameOver/VBoxContainer/quitButton
-#
+onready var retryButton = $gameOver/VBoxContainer/retryButton
+onready var menuButtonGameOver = $gameOver/VBoxContainer/menuButton
+onready var quitButtonGameOver = $gameOver/VBoxContainer/quitButton
+
 onready var pauseMenu = $pauseMenu
-#onready var menuButtonPause = $pauseMenu/VBoxContainer/menuButton
-#onready var quitButtonPause = $pauseMenu/VBoxContainer/quitButton
+onready var menuButtonPause = $pauseMenu/VBoxContainer/menuButton
+onready var quitButtonPause = $pauseMenu/VBoxContainer/quitButton
 
 onready var gasProgress = $GasBar/VBoxContainer/TextureProgress
 onready var gasTexture = $GasBar/VBoxContainer/EmojiTexture
@@ -29,7 +29,13 @@ var lastTimeDamageReceived = 0
 var appearTimer = 0
 
 func _ready():
-#	waveLabel.text = ""
+	pauseMenu.visible = false
+	gameOverPanel.visible = false
+	set_process(false)
+	
+	yield(Global.wait(1), "timeout")
+	set_process(true)
+	
 	Global.player.connect("onHealthChanged", self, "updateGasbar")
 	Global.player.connect("onDamageReceived", self, "onReceivedDamage")
 	
@@ -39,26 +45,23 @@ func _ready():
 #
 #	gameManager.connect("onWaveSpawned", self, "updateWave")
 #	gameManager.connect("onScoreChanged", self, "updateScore")
-#	gameManager.connect("onGameOver", self, "onGameOver")
+
+	Global.gameManager.connect("onGameOver", self, "onGameOver")
+	retryButton.connect("pressed", Global, "retryGame")
 #
-#	retryButton.connect("pressed", Global, "retryGame")
+	menuButtonGameOver.connect("pressed", Global, "launchMenu")
+	quitButtonGameOver.connect("pressed", Global, "quitGame")
+	
+	menuButtonPause.connect("pressed", Global, "launchMenu")
+	quitButtonPause.connect("pressed", Global, "quitGame")
 #
-#	menuButtonGameOver.connect("pressed", Global, "launchMenu")
-#	menuButtonPause.connect("pressed", Global, "launchMenu")
-#
-#	quitButtonGameOver.connect("pressed", Global, "quitGame")
-#	quitButtonPause.connect("pressed", Global, "quitGame")
-#
-#	Global.stateManager.connect("pauseToggled", self, "onPauseToggled")
-#
-	gameOverPanel.visible = false
-	pauseMenu.visible = false
+	Global.stateManager.connect("onPause", self, "onPauseToggled")
 	
 	set_process(false)
 	update_damage_alpha(0)
 
 func _process(delta):
-	var timeDelta = gameManager.currentTime - lastTimeDamageReceived
+	var timeDelta = Global.gameManager.currentTime - lastTimeDamageReceived
 	var t
 	var alpha = 0
 	
@@ -114,11 +117,16 @@ func getGasTex(gas):
 		return gasTextures[5];	
 		
 func onGameOver():
+	Global.stateManager.disconnect("onPause", self, "onPauseToggled")
+	
 #	healthLabel.hide()
 #	waveLabel.hide()
 #	scoreLabel.hide()
 	gasProgress.hide()
+	gasTexture.hide()
 	gameOverPanel.show()
+	
+	Global.stateManager.pause(true)
 	
 func onPauseToggled(isPause):
 	if(isPause):

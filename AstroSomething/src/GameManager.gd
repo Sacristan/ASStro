@@ -71,10 +71,9 @@ func checkGameWon():
 
 func gameOver():
 	yield(Global.wait(1), "timeout")
-	Global.retryGame()
+#	Global.retryGame()
 
 func gameWon():
-	Global.player.disconnect("got_safe", self, "gameWon")
 	emit_signal("onGameWon")
 	print("Game Won")
 	yield(Global.wait(2), "timeout")

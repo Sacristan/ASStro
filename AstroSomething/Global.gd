@@ -2,6 +2,7 @@ extends Node
 
 var player: Player = null	
 var gameManager: GameManager = null
+var stateManager: StateManager = null
 
 const gameScenePath = "res://scenes/levels/level1.tscn"
 const menuScenePath = "res://scenes/levels/menu.tscn"

@@ -174,7 +174,6 @@ text = "Score: 0"
 
 [node name="gameOver" type="MarginContainer" parent="."]
 pause_mode = 2
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
