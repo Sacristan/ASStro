@@ -46,14 +46,29 @@ func onAssteroidExploded(assteroid):
 		assteroids.remove(index)
 		
 	if(assteroids.size() <= 0):
-		gameWon()
+		checkGameWon()
 		
-func gameWon():
-	emit_signal("onGameWon")
-	print("Game Won")
+func checkGameWon():
+	print("checkGameWon")
+	
+	if(Global.player.is_safe()):
+		print("immediate win -> player is safe")
+		gameWon()
+	else:
+		print("win wait until player is safe")
+		
+		while(!Global.player.is_safe()):
+			yield(Global.wait(0.1), "timeout")
+			print("wait until player is safe tick")
+		gameWon()
+
+func gameOver():
 	yield(Global.wait(1), "timeout")
 	Global.retryGame()
 
-func gameOver():
+func gameWon():
+	Global.player.disconnect("got_safe", self, "gameWon")
+	emit_signal("onGameWon")
+	print("Game Won")
 	yield(Global.wait(2), "timeout")
 	Global.retryGame()
