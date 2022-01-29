@@ -8,10 +8,9 @@ const Explosive = preload("res://scenes/actors/props/Dynamite.tscn")
 var currentAsteroid = null
 var queued_asteroid = null
 
-const healthDeductPerSecond = 0.15
-const healthRegenRate = 0.3
-const healthRegenTimeout = 1
-const regenFreezeAfterDamage = 3
+const healthDeductPerSecond = 0.1 #10 perc health rem/s
+const healthRegenRate = healthDeductPerSecond * 0.5 #30perc per second
+const healthRegenTimeout = 3 #seconds after regen starts working
 
 var health = 1.0
 var lastTimeReceivedDamage = 0

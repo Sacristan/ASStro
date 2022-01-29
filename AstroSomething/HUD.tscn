@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/HUD.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/GameFont.tres" type="DynamicFont" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://ui/progress.png" type="Texture" id=4]
 [ext_resource path="res://vignette.png" type="Texture" id=5]
 [ext_resource path="res://ui/emojis/1.png" type="Texture" id=6]
+[ext_resource path="res://ui/emojis/3.png" type="Texture" id=7]
+[ext_resource path="res://ui/emojis/2.png" type="Texture" id=8]
+[ext_resource path="res://ui/emojis/6.png" type="Texture" id=9]
+[ext_resource path="res://ui/emojis/4.png" type="Texture" id=10]
+[ext_resource path="res://ui/emojis/5.png" type="Texture" id=11]
 
 [sub_resource type="VisualShaderNodeColorUniform" id=1]
 uniform_name = "ColorUniform"
@@ -99,6 +104,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+gasTextures = [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 9 ) ]
 
 [node name="damageEffect" type="ColorRect" parent="."]
 material = SubResource( 5 )

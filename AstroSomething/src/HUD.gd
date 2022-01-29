@@ -1,5 +1,7 @@
 extends Control
-#
+
+export(Array, Texture) var gasTextures;
+
 #onready var healthLabel = $upperbar/Health/HealthLabel
 #onready var waveLabel = $upperbar/Wave/WaveLabel
 #onready var scoreLabel = $upperbar/Score/ScoreLabel
@@ -95,7 +97,22 @@ func onReceivedDamage():
 #
 func updateGasbar(gas):
 	gasProgress.value = lerp(0, 100, gas)
+	gasTexture.texture = getGasTex(gas);
 #
+func getGasTex(gas):
+	if(gas > 0.8):
+		return gasTextures[0];
+	elif(gas < 0.8 && gas > 0.6):
+		return gasTextures[1];	
+	elif(gas < 0.6 && gas > 0.4):
+		return gasTextures[2];	
+	elif(gas < 0.4 && gas > 0.2):
+		return gasTextures[3];	
+	elif(gas < 0.2 && gas > 0.01):
+		return gasTextures[4]
+	elif(gas < 0.01):
+		return gasTextures[5];	
+		
 func onGameOver():
 #	healthLabel.hide()
 #	waveLabel.hide()
