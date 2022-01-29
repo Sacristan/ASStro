@@ -9,6 +9,8 @@ var gameOver = false
 func _ready():
 	Global.gameManager = self
 	
+	Global.enableCursor(false)
+	
 	set_physics_process(false)
 	yield(Global.wait(1), "timeout")
 	set_physics_process(true)
