@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/actors/props/ASSteroid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/actors/chars/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Player.gd" type="Script" id=3]
 
 [node name="Spatial" type="Spatial"]
 
@@ -12,3 +13,4 @@ transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0 )
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 81.1147 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 3 )
