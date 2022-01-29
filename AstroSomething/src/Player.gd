@@ -42,7 +42,7 @@ func tryPlaceExplosive():
 
 	var asteroidBody = currentAsteroidBody()
 	
-	if(asteroidBody is Assteroid && !asteroidBody.has_explosive()):
+	if(is_on_assteroid() && !asteroidBody.has_explosive()):
 		placeExplosiveOn(asteroidBody)
 	
 func placeExplosiveOn(body):
