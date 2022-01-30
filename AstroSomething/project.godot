@@ -43,6 +43,11 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://src/Player.gd"
+}, {
+"base": "Node",
+"class": "StateManager",
+"language": "GDScript",
+"path": "res://src/StateManager.gd"
 } ]
 _global_script_class_icons={
 "Assteroid": "",
@@ -51,12 +56,13 @@ _global_script_class_icons={
 "KinematicCharacter": "",
 "KinematicCharacterWithExportedAttributes": "",
 "Planetoid": "",
-"Player": ""
+"Player": "",
+"StateManager": ""
 }
 
 [application]
 
-config/name="ASSteroid"
+config/name="ASStro"
 run/main_scene="res://scenes/levels/level1.tscn"
 config/icon="res://icon.png"
 

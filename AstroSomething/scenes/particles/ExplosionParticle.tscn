@@ -1,4 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="SpatialMaterial" id=9]
+vertex_color_use_as_albedo = true
 
 [sub_resource type="Gradient" id=6]
 offsets = PoolRealArray( 0.527981, 0.856448, 0.92944 )
@@ -30,6 +33,7 @@ radial_segments = 16
 rings = 8
 
 [node name="Spatial" type="Particles"]
+material_override = SubResource( 9 )
 emitting = false
 amount = 24
 one_shot = true

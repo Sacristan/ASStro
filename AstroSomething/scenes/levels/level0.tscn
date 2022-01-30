@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/actors/props/ASSteroid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/actors/chars/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/actors/props/Planetoid.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/GameManager.gd" type="Script" id=4]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/StateManager.gd" type="Script" id=6]
+
+[node name="level0" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="StateManager" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 6 )
+
+[node name="LevelBounds" type="CSGBox" parent="."]
+transform = Transform( 106.18, 0, 0, 0, 149.553, 0, 0, 0, 198.691, 71.4201, 2.93652, 20.927 )
+visible = false
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.9029, 40.9564, 21.7418 )
+
+[node name="ASSteroid" parent="." instance=ExtResource( 1 )]
+transform = Transform( 35, 0, 0, 0, 35, 0, 0, 0, 35, 72.166, 30.44, -39.2213 )
+
+[node name="ASSteroid2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 35, 0, 0, 0, 35, 0, 0, 0, 35, 72.166, -23.8821, 81.6705 )
+
+[node name="Planetoid" parent="." instance=ExtResource( 3 )]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )

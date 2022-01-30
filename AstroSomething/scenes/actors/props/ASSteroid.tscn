@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Assteroid.gd" type="Script" id=1]
 [ext_resource path="res://_reference/Materials/gravity_field_spatialmaterial.tres" type="Material" id=2]
-[ext_resource path="res://scenes/actors/props/ASSteroidMat.tres" type="SphereMesh" id=3]
+[ext_resource path="res://mesh/Assteroids04.glb" type="PackedScene" id=3]
 [ext_resource path="res://_reference/Scripts/gravity_field_point.gd" type="Script" id=4]
 [ext_resource path="res://scenes/particles/ExplosionParticle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mesh/Assteroids03.glb" type="PackedScene" id=6]
+[ext_resource path="res://mesh/Assteroids02.glb" type="PackedScene" id=7]
+[ext_resource path="res://mesh/Assteroids05.glb" type="PackedScene" id=8]
+[ext_resource path="res://mesh/Assteroids06.glb" type="PackedScene" id=9]
+[ext_resource path="res://mesh/Assteroids01.glb" type="PackedScene" id=10]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -14,9 +19,6 @@ radial_segments = 12
 rings = 12
 
 [sub_resource type="SphereShape" id=7]
-
-[sub_resource type="SpatialMaterial" id=8]
-vertex_color_use_as_albedo = true
 
 [node name="ASSteroid" type="Area"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 19.9999, 9.18611, -9.94676 )
@@ -33,15 +35,30 @@ mesh = SubResource( 2 )
 [node name="Body" type="KinematicBody" parent="."]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 script = ExtResource( 1 )
+assteroids = [ NodePath("Assteroids/Assteroids01"), NodePath("Assteroids/Assteroids02"), NodePath("Assteroids/Assteroids03"), NodePath("Assteroids/Assteroids04"), NodePath("Assteroids/Assteroids05"), NodePath("Assteroids/Assteroids06") ]
 
 [node name="CollisionShape" type="CollisionShape" parent="Body"]
 shape = SubResource( 7 )
 
-[node name="CSGMesh" type="CSGMesh" parent="Body"]
-mesh = ExtResource( 3 )
+[node name="Assteroids" type="Spatial" parent="Body"]
+
+[node name="Assteroids01" parent="Body/Assteroids" instance=ExtResource( 10 )]
+visible = false
+
+[node name="Assteroids02" parent="Body/Assteroids" instance=ExtResource( 7 )]
+visible = false
+
+[node name="Assteroids03" parent="Body/Assteroids" instance=ExtResource( 6 )]
+visible = false
+
+[node name="Assteroids04" parent="Body/Assteroids" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Assteroids05" parent="Body/Assteroids" instance=ExtResource( 8 )]
+visible = false
+
+[node name="Assteroids06" parent="Body/Assteroids" instance=ExtResource( 9 )]
+visible = false
 
 [node name="Particle" parent="Body" instance=ExtResource( 5 )]
-material_override = SubResource( 8 )
-amount = 56
-explosiveness = 0.17
-visibility_aabb = AABB( -1, -1, -1, 2, 2, 2 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )

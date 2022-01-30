@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/actors/props/ASSteroid.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/actors/chars/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/actors/props/Planetoid.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/GameManager.gd" type="Script" id=4]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/StateManager.gd" type="Script" id=6]
+
+[node name="level3" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="StateManager" type="Node" parent="."]
+pause_mode = 2
+script = ExtResource( 6 )
+
+[node name="LevelBounds" type="CSGBox" parent="."]
+transform = Transform( 190.392, 0, 0, 0, 251.577, 0, 0, 0, 134.75, 65.9991, 0.226036, -7.41405 )
+visible = false
+width = 1.0
+height = 1.0
+depth = 1.0
+
+[node name="HUD" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.4875, 32.6161, 21.7418 )
+
+[node name="ASSteroid" parent="." instance=ExtResource( 1 )]
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 58.8456, -52.7878, 0 )
+
+[node name="ASSteroid4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 116.724, -79.099, -25.4048 )
+
+[node name="ASSteroid2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 9.19128, 23.7191, 12.3144 )
+
+[node name="ASSteroid3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 53.5289, 74.424, 12.3144 )
+
+[node name="ASSteroid5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 122.525, 0.376125, 12.3144 )
+
+[node name="Planetoid" parent="." instance=ExtResource( 3 )]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
+acceleration = 30.0
+
+[node name="Planetoid2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 76.1768, -64.7519, -43.1404 )
+acceleration = 30.0

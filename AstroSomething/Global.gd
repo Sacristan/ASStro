@@ -2,15 +2,36 @@ extends Node
 
 var player: Player = null	
 var gameManager: GameManager = null
+var stateManager: StateManager = null
 
-const gameScenePath = "res://scenes/levels/level1.tscn"
+const levels = {
+	"menu": "res://scenes/levels/level0.tscn",
+	"level0": "res://scenes/levels/level1.tscn",
+	"level1": "res://scenes/levels/level2.tscn",
+	"level2": "res://scenes/levels/level3.tscn",
+	"level3": "res://scenes/levels/level4.tscn",
+	"level4": "res://scenes/levels/level5.tscn",
+	"level5": "res://scenes/levels/level6.tscn",
+}
+
 const menuScenePath = "res://scenes/levels/menu.tscn"
+
+func hasMoreLevels():
+	var key = getCurrentSceneName()
+	return levels.has(key)
+
+func nextLevel():
+	var sceneName = getCurrentSceneName() #outputs root scene node name
+	get_tree().change_scene(levels[sceneName])
+	
+func getCurrentSceneName():
+	return get_tree().get_current_scene().get_name()
 
 func retryGame():
 	get_tree().reload_current_scene()
 	
 func launchGame():
-	get_tree().change_scene(gameScenePath)
+	nextLevel()
 	
 func launchMenu():
 	get_tree().change_scene(menuScenePath)
