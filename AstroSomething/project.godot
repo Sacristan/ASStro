@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody",
-"class": "Assteroid",
-"language": "GDScript",
-"path": "res://src/Assteroid.gd"
-}, {
 "base": "Spatial",
 "class": "GameManager",
 "language": "GDScript",
@@ -50,7 +45,6 @@ _global_script_classes=[ {
 "path": "res://src/StateManager.gd"
 } ]
 _global_script_class_icons={
-"Assteroid": "",
 "GameManager": "",
 "GravityField": "",
 "KinematicCharacter": "",
@@ -63,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ASSteroid"
-run/main_scene="res://scenes/levels/menu.tscn"
+run/main_scene="res://scenes/levels/level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
