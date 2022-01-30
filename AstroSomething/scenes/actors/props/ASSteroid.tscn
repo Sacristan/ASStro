@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Assteroid.gd" type="Script" id=1]
 [ext_resource path="res://_reference/Materials/gravity_field_spatialmaterial.tres" type="Material" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://mesh/Assteroids05.glb" type="PackedScene" id=8]
 [ext_resource path="res://mesh/Assteroids06.glb" type="PackedScene" id=9]
 [ext_resource path="res://mesh/Assteroids01.glb" type="PackedScene" id=10]
+[ext_resource path="res://scenes/particles/ASSFumes.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SphereShape" id=1]
 
@@ -62,3 +63,12 @@ visible = false
 
 [node name="Particle" parent="Body" instance=ExtResource( 5 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+
+[node name="Particles" parent="Body" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 0.928939, -0.370233, 0, 0.370233, 0.928939, 0, 0.844782, 0.654935 )
+amount = 20
+preprocess = 10.0
+fixed_fps = 60
+local_coords = true
+
+[editable path="Body/Particles"]
