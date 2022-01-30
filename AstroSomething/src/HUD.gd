@@ -18,6 +18,7 @@ onready var nextButtonGameWin = $gameOver/victory/nextButton
 onready var retryButtonGameWin = $gameOver/victory/retryButton
 onready var menuButtonGameWin = $gameOver/victory/menuButton
 onready var scoreVictory = $gameOver/victory/Score
+onready var victoryLabel = $gameOver/victory/VictoryLabel
 
 onready var pauseMenu = $pauseMenu
 onready var menuButtonPause = $pauseMenu/VBoxContainer/menuButton
@@ -150,6 +151,8 @@ func onGameWon():
 	
 	scoreVictory.text = "Time: %10.2f secs"%Global.gameManager.currentTime 
 	state = State.Victory
+	
+	victoryLabel.text = "Completed %s"%Global.getCurrentSceneName()
 	
 func onGameOver():
 	gameOverBase()

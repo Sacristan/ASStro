@@ -189,8 +189,8 @@ __meta__ = {
 
 [node name="lost" type="VBoxContainer" parent="gameOver"]
 visible = false
-margin_right = 250.0
-margin_bottom = 135.0
+margin_right = 253.0
+margin_bottom = 169.0
 
 [node name="Label" type="Label" parent="gameOver/lost"]
 margin_right = 250.0
@@ -198,7 +198,7 @@ margin_bottom = 31.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 custom_fonts/font = ExtResource( 12 )
-text = "Game Over"
+text = "YOU FAILED!"
 align = 1
 
 [node name="Control" type="Control" parent="gameOver/lost"]
@@ -229,28 +229,27 @@ custom_fonts/font = ExtResource( 2 )
 text = "QUIT"
 
 [node name="victory" type="VBoxContainer" parent="gameOver"]
-visible = false
-margin_right = 250.0
+margin_right = 253.0
 margin_bottom = 169.0
 
-[node name="Label" type="Label" parent="gameOver/victory"]
-margin_right = 250.0
+[node name="VictoryLabel" type="Label" parent="gameOver/victory"]
+margin_right = 253.0
 margin_bottom = 31.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
 custom_fonts/font = ExtResource( 12 )
-text = "VICtory"
+text = "Completed LevelX"
 align = 1
 
 [node name="Control" type="Control" parent="gameOver/victory"]
 margin_top = 35.0
-margin_right = 250.0
+margin_right = 253.0
 margin_bottom = 55.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="Score" type="Label" parent="gameOver/victory"]
 margin_top = 59.0
-margin_right = 250.0
+margin_right = 253.0
 margin_bottom = 73.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 1
@@ -260,27 +259,27 @@ align = 1
 
 [node name="Control2" type="Control" parent="gameOver/victory"]
 margin_top = 77.0
-margin_right = 250.0
+margin_right = 253.0
 margin_bottom = 97.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="nextButton" type="Button" parent="gameOver/victory"]
 margin_top = 101.0
-margin_right = 250.0
+margin_right = 253.0
 margin_bottom = 121.0
 custom_fonts/font = ExtResource( 2 )
 text = "Next"
 
 [node name="retryButton" type="Button" parent="gameOver/victory"]
 margin_top = 125.0
-margin_right = 250.0
+margin_right = 253.0
 margin_bottom = 145.0
 custom_fonts/font = ExtResource( 2 )
 text = "Retry"
 
 [node name="menuButton" type="Button" parent="gameOver/victory"]
 margin_top = 149.0
-margin_right = 250.0
+margin_right = 253.0
 margin_bottom = 169.0
 custom_fonts/font = ExtResource( 2 )
 text = "MENU"
