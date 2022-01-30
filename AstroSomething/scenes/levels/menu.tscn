@@ -12,12 +12,10 @@ background_mode = 2
 background_sky = ExtResource( 6 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 7.24
-fog_enabled = true
 fog_color = Color( 0.203922, 0.262745, 0.333333, 1 )
 tonemap_mode = 2
 tonemap_white = 1.5
 ssao_enabled = true
-glow_enabled = true
 glow_bloom = 0.1
 glow_blend_mode = 0
 adjustment_enabled = true
@@ -92,37 +90,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="MenuUI/Control"]
-anchor_left = 3.33
-anchor_top = -0.032
-anchor_right = 4.567
-anchor_bottom = 0.223
-margin_left = 5.04999
-margin_top = 8.024
-margin_right = 5.09491
-margin_bottom = 7.989
-custom_fonts/font = SubResource( 16 )
-text = "OBJECTIVE"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label4" type="Label" parent="MenuUI/Control"]
-anchor_left = 4.586
-anchor_right = 4.586
-margin_left = -242.99
-margin_top = 33.0
-margin_right = 0.0100098
-margin_bottom = 64.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_fonts/font = SubResource( 17 )
-text = "Kill all ASS Teroids"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label2" type="Label" parent="MenuUI/Control"]
 margin_left = 0.8909
 margin_top = 17.5331
@@ -182,6 +149,7 @@ __meta__ = {
 
 [node name="Label5" type="Label" parent="MenuUI"]
 anchor_top = 1.0
+anchor_right = 0.9
 anchor_bottom = 1.0
 margin_left = 14.0
 margin_top = -73.0
@@ -192,6 +160,35 @@ text = "Controls:
 
 Jump: LMB/SPACE
 Place bomb: RMB"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="MenuUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -133.0
+margin_top = 23.0
+margin_right = -17.0
+margin_bottom = 65.4
+custom_fonts/font = SubResource( 16 )
+text = "OBJECTIVE"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="MenuUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -261.0
+margin_top = 53.0
+margin_right = -17.9995
+margin_bottom = 84.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Kill all ASS Teroids"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
