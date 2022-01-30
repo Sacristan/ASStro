@@ -16,7 +16,7 @@ func assign_explosive(explosive):
 func onExplosiveExploded():
 	print("Asteroid BOOM")
 	emit_signal("onExplode", self)
-	yield(Global.wait(1),"timeout")
+	yield(Global.wait(0.1),"timeout")
 	get_parent().queue_free()
 
 func has_explosive():
