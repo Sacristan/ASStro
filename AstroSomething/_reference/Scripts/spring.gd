@@ -1,6 +1,7 @@
 extends Area
 
 export var push_velocity:float = 40
+onready var audio = $Sound 
 
 func _ready():
 	pass
@@ -12,3 +13,4 @@ func _process(delta):
 			body.start_falling()
 			body.velocity -= body.velocity.project(up_direction)
 			body.velocity += up_direction*push_velocity
+			audio.play()

@@ -1,16 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://_reference/Scripts/spring.gd" type="Script" id=1]
-[ext_resource path="res://_reference/Materials/red_spatialmaterial.tres" type="Material" id=2]
-[ext_resource path="res://_reference/Materials/black_spaltialmaterial.tres" type="Material" id=3]
+[ext_resource path="res://mesh/Jumppad.glb" type="PackedScene" id=2]
+[ext_resource path="res://audio/sfx-boing3.mp3" type="AudioStream" id=3]
 
 [sub_resource type="CylinderShape" id=1]
-
-[sub_resource type="CylinderMesh" id=3]
-material = ExtResource( 2 )
-
-[sub_resource type="CylinderMesh" id=2]
-material = ExtResource( 3 )
 
 [node name="Jumppad" type="Area"]
 script = ExtResource( 1 )
@@ -18,12 +12,8 @@ script = ExtResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
-[node name="Meshes" type="Spatial" parent="."]
+[node name="Jumppad" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.632854, 0 )
 
-[node name="CSGMeshTop" type="CSGMesh" parent="Meshes"]
-transform = Transform( 1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0.703706, 0 )
-mesh = SubResource( 3 )
-
-[node name="CSGMeshSpring" type="CSGMesh" parent="Meshes"]
-transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0 )
-mesh = SubResource( 2 )
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
