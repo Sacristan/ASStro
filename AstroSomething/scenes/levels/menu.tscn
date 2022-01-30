@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fonts/AldotheApache.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/GameFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://godot.png" type="Texture" id=3]
 [ext_resource path="res://src/Menu.gd" type="Script" id=4]
 [ext_resource path="res://mesh/Material_001.material" type="Material" id=5]
+[ext_resource path="res://mesh/Planetoid.glb" type="PackedScene" id=6]
+[ext_resource path="res://src/Rotate.gd" type="Script" id=7]
 
 [sub_resource type="ArrayMesh" id=19]
 resource_name = "Assteroids01_Assteroid_Low002"
@@ -33,6 +35,10 @@ size = 14
 font_data = ExtResource( 1 )
 
 [node name="menu" type="Spatial"]
+
+[node name="Planetoid" parent="." instance=ExtResource( 6 )]
+transform = Transform( -0.783623, 1.76861, -0.507889, 0.332564, -0.406811, -1.92974, -1.80979, -0.840548, -0.134695, 0.519648, -0.899465, 2.13996 )
+script = ExtResource( 7 )
 
 [node name="Ass01" type="MeshInstance" parent="."]
 transform = Transform( -0.245908, 0.00742596, 0.969265, 0.0205713, 0.999785, -0.00244072, -0.969075, 0.0193389, -0.246008, 1.52078, 0, -1.06851 )
