@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/actors/props/ASSteroid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/actors/chars/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/GameManager.gd" type="Script" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/StateManager.gd" type="Script" id=6]
+[ext_resource path="res://scenes/actors/props/Jumppad.tscn" type="PackedScene" id=7]
 
 [node name="level2" type="Spatial"]
 script = ExtResource( 4 )
@@ -15,7 +16,7 @@ pause_mode = 2
 script = ExtResource( 6 )
 
 [node name="LevelBounds" type="CSGBox" parent="."]
-transform = Transform( 190.392, 0, 0, 0, 251.577, 0, 0, 0, 134.75, 65.9991, 0.226036, -7.41405 )
+transform = Transform( 168.821, 0, 0, 0, 245.472, 0, 0, 0, 388.612, 71.4201, 2.93652, -31.4756 )
 visible = false
 width = 1.0
 height = 1.0
@@ -24,26 +25,24 @@ depth = 1.0
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.4875, 32.6161, 21.7418 )
+transform = Transform( 0.81372, 0, -0.581257, 0, 1, 0, 0.581257, 0, 0.81372, 69.9029, 33.5593, 27.5964 )
 
 [node name="ASSteroid" parent="." instance=ExtResource( 1 )]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 58.8456, -52.7878, 0 )
-
-[node name="ASSteroid4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 116.724, -79.099, -25.4048 )
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 72.166, -44.6717, 79.1875 )
 
 [node name="ASSteroid2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 13.4705, 23.7191, 12.3144 )
-
-[node name="ASSteroid3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 53.5289, 72.2624, 12.3144 )
-
-[node name="ASSteroid5" parent="." instance=ExtResource( 1 )]
-transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 121.175, 0.376125, 12.3144 )
+transform = Transform( 35, 0, 0, 0, 35, 0, 0, 0, 35, 72.166, 72.0592, -148.108 )
 
 [node name="Planetoid" parent="." instance=ExtResource( 3 )]
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
-acceleration = 3.0
 
 [node name="Planetoid2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 76.1768, -64.7519, -43.1404 )
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 72.1421, 9.44041, -97.9304 )
+
+[node name="Jumppad" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.991593, -0.129383, -0.00159125, 0.104142, 0.790723, 0.603251, -0.0767922, -0.598345, 0.79755, 69.7256, 25.3456, 7.23188 )
+push_velocity = 60.0
+
+[node name="Jumppad2" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.991593, -0.129383, -0.00159125, 0.0812283, 0.632013, -0.770689, 0.10072, 0.764081, 0.63721, 69.7256, 25.3456, -78.422 )
+push_velocity = 60.0

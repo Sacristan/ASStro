@@ -15,7 +15,7 @@ pause_mode = 2
 script = ExtResource( 6 )
 
 [node name="LevelBounds" type="CSGBox" parent="."]
-transform = Transform( 115.159, 0, 0, 0, 226.703, 0, 0, 0, 233.298, 65.9991, 7.90572, 19.6908 )
+transform = Transform( 190.392, 0, 0, 0, 251.577, 0, 0, 0, 134.75, 65.9991, 0.226036, -7.41405 )
 visible = false
 width = 1.0
 height = 1.0
@@ -24,20 +24,26 @@ depth = 1.0
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.575, 19.4369, 19.4962 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 90.4875, 32.6161, 21.7418 )
 
 [node name="ASSteroid" parent="." instance=ExtResource( 1 )]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 66.424, -51.5788, 19.6112 )
-
-[node name="ASSteroid2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 66.424, 8.57685, 81.9977 )
-
-[node name="ASSteroid3" parent="." instance=ExtResource( 1 )]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 66.424, 8.57685, -43.8125 )
+transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 58.8456, -52.7878, 0 )
 
 [node name="ASSteroid4" parent="." instance=ExtResource( 1 )]
-transform = Transform( 50, 0, 0, 0, 50, 0, 0, 0, 50, 66.424, 71.1308, 17.3526 )
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 116.724, -79.099, -25.4048 )
+
+[node name="ASSteroid2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 13.4705, 23.7191, 12.3144 )
+
+[node name="ASSteroid3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 53.5289, 72.2624, 12.3144 )
+
+[node name="ASSteroid5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 121.175, 0.376125, 12.3144 )
 
 [node name="Planetoid" parent="." instance=ExtResource( 3 )]
-transform = Transform( 15, 0, 0, 0, 15, 0, 0, 0, 15, 72.1659, 9.18611, 19.6165 )
-acceleration = 30.0
+transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
+acceleration = 3.0
+
+[node name="Planetoid2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 76.1768, -64.7519, -43.1404 )

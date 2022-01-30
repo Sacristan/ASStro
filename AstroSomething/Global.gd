@@ -5,8 +5,13 @@ var gameManager: GameManager = null
 var stateManager: StateManager = null
 
 const levels = {
-	"menu": "res://scenes/levels/level1.tscn",
+	"menu": "res://scenes/levels/level0.tscn",
+	"level0": "res://scenes/levels/level1.tscn",
 	"level1": "res://scenes/levels/level2.tscn",
+	"level2": "res://scenes/levels/level3.tscn",
+	"level3": "res://scenes/levels/level4.tscn",
+	"level4": "res://scenes/levels/level5.tscn",
+	"level5": "res://scenes/levels/level6.tscn",
 }
 
 const menuScenePath = "res://scenes/levels/menu.tscn"
