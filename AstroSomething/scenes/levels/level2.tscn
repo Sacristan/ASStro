@@ -43,6 +43,7 @@ transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 121.175, 0.376125, 12.3144 
 
 [node name="Planetoid" parent="." instance=ExtResource( 3 )]
 transform = Transform( 40, 0, 0, 0, 40, 0, 0, 0, 40, 72.1659, 9.18611, 19.6165 )
+acceleration = 3.0
 
 [node name="Planetoid2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 30, 0, 0, 0, 30, 0, 0, 0, 30, 76.1768, -64.7519, -43.1404 )
