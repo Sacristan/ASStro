@@ -1,12 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/Dynamite.gd" type="Script" id=1]
+[ext_resource path="res://mesh/Dynamite.glb" type="PackedScene" id=2]
 
 [node name="Dynamite" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0 )
-width = 1.0
-height = 1.0
-depth = 1.0
+[node name="Dynamite" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.3, 0, 0, 0, -1.31134e-08, -0.3, 0, 0.3, -1.31134e-08, 0, 0, 0 )
