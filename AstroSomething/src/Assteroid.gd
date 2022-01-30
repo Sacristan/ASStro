@@ -2,8 +2,14 @@ extends KinematicBody
 class_name Assteroid
 
 signal onExplode(assteroid)
+export(Array, NodePath) var assteroids
 
 var explosive
+
+func _ready():
+	var index = randi() % assteroids.size()
+	var obj = assteroids[index]
+	get_node(obj).visible = true
 
 func explode():
 	pass
