@@ -93,8 +93,6 @@ func _process(delta):
 	var t
 	var alpha = 0
 	
-	updateGasbar(timeDelta)
-	
 	if timeDelta < DamageIndicationAppearTime:
 		appearTimer+=delta
 		t = appearTimer / DamageIndicationAppearTime
@@ -112,8 +110,8 @@ func update_damage_alpha(alpha):
 func get_damage_alpha():
 	return damageEffect.material.get_shader_param("Alpha")
 	
-func onReceivedDamage():
-	lastTimeDamageReceived = gameManager.currentTime
+func onReceivedDamage(health):
+	lastTimeDamageReceived = Global.gameManager.currentTime
 	set_process(true)
 	appearTimer = 0
 
