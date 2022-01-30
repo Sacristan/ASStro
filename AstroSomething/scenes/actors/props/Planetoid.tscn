@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Planetoid.gd" type="Script" id=1]
 [ext_resource path="res://_reference/Materials/gravity_field_spatialmaterial.tres" type="Material" id=2]
-[ext_resource path="res://scenes/actors/props/PlanetoidMat.tres" type="Material" id=3]
+[ext_resource path="res://mesh/Planetoid.glb" type="PackedScene" id=3]
 [ext_resource path="res://_reference/Scripts/gravity_field_point.gd" type="Script" id=4]
 
 [sub_resource type="SphereShape" id=1]
@@ -13,9 +13,6 @@ radial_segments = 12
 rings = 12
 
 [sub_resource type="SphereShape" id=7]
-
-[sub_resource type="SphereMesh" id=8]
-material = ExtResource( 3 )
 
 [node name="Planetoid" type="Area"]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 19.9999, 9.18611, -9.94676 )
@@ -36,5 +33,4 @@ script = ExtResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="Body"]
 shape = SubResource( 7 )
 
-[node name="CSGMesh" type="CSGMesh" parent="Body"]
-mesh = SubResource( 8 )
+[node name="Planetoid" parent="Body" instance=ExtResource( 3 )]
