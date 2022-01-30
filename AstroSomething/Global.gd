@@ -12,11 +12,15 @@ const levels = {
 const menuScenePath = "res://scenes/levels/menu.tscn"
 
 func hasMoreLevels():
-	return true
+	var key = getCurrentSceneName()
+	return levels.has(key)
 
 func nextLevel():
-	var sceneName = get_tree().get_current_scene().get_name() #outputs root scene node name
+	var sceneName = getCurrentSceneName() #outputs root scene node name
 	get_tree().change_scene(levels[sceneName])
+	
+func getCurrentSceneName():
+	return get_tree().get_current_scene().get_name()
 
 func retryGame():
 	get_tree().reload_current_scene()

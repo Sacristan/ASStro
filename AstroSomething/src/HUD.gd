@@ -72,7 +72,7 @@ func _ready():
 	
 	menuButtonPause.connect("pressed", Global, "launchMenu")
 	quitButtonPause.connect("pressed", Global, "quitGame")
-#
+	
 	Global.stateManager.connect("onPause", self, "onPauseToggled")
 	
 	set_process(false)
@@ -144,6 +144,10 @@ func onGameWon():
 	gameOverBase()
 	gameOverVictoryContainer.show()
 	gameOverLostContainer.hide()
+	
+	if(!Global.hasMoreLevels()):
+		nextButtonGameWin.hide()
+	
 	scoreVictory.text = "Time: %10.2f secs"%Global.gameManager.currentTime 
 	state = State.Victory
 	
