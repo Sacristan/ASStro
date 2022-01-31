@@ -1984,7 +1984,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 0.916619, -0.399762, 0, 0.399762, 0.916619, 0.77, -1.55, -0.4 )
 
 [node name="Boot_New_Low" type="MeshInstance" parent="Mesh/RightFoot"]
-transform = Transform( -1.13632, 9.93402e-08, -4.3423e-15, 6.18051e-09, 0.0706969, -1.13412, -9.91478e-08, -1.13412, -0.0706969, 0, 0.491791, 0.281183 )
+transform = Transform( -1.13632, 9.93402e-08, -4.3423e-15, 6.18051e-09, 0.0706969, -1.13412, -9.91477e-08, -1.13412, -0.0706969, 0.13, 0.492, 0.281 )
 mesh = SubResource( 64 )
 skeleton = NodePath("")
 material/0 = null
@@ -1993,7 +1993,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 0.963051, 0.269318, 0, -0.269318, 0.963051, -0.77, -1.619, 0.117204 )
 
 [node name="Boot_New_Low001" type="MeshInstance" parent="Mesh/LeftFoot"]
-transform = Transform( -1.13632, -9.93403e-08, 4.3423e-15, 3.55271e-15, -1.19209e-07, -1.13632, 9.93403e-08, -1.13632, 1.19209e-07, 0, 0.499771, 0.13976 )
+transform = Transform( -1.13632, -9.93403e-08, 4.3423e-15, 3.55271e-15, -1.19209e-07, -1.13632, 9.93403e-08, -1.13632, 1.19209e-07, -0.13, 0.5, 0.14 )
 mesh = SubResource( 61 )
 skeleton = NodePath("")
 material/0 = null
@@ -2002,7 +2002,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.17703, -0.094471, -0.61898 )
 
 [node name="Cube" type="MeshInstance" parent="Mesh/RightHand"]
-transform = Transform( 0.378448, 0, 0, 0, 0.0782014, 0.189904, 0, -0.291852, 0.0508845, 0, 9.53674e-07, 0 )
+transform = Transform( 0.378448, 0, 0, 0, 0.0782014, 0.189904, 0, -0.291852, 0.0508845, 0.2, 0, -0.672 )
 mesh = SubResource( 55 )
 skeleton = NodePath("")
 material/0 = null
@@ -2011,7 +2011,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.414, -0.400002, 0.513229 )
 
 [node name="Cube001" type="MeshInstance" parent="Mesh/LeftHand"]
-transform = Transform( -0.378448, 0, 1.71876e-08, 0, 0.302147, 0, -3.3085e-08, 0, -0.196603, 0, 0, 0 )
+transform = Transform( -0.378448, -6.83659e-09, -1.66019e-08, 0, 0.291852, -0.0508845, 3.3085e-08, -0.0782014, -0.189904, -0.2, 0, -0.672 )
 mesh = SubResource( 58 )
 skeleton = NodePath("")
 material/0 = null
