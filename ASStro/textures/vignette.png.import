@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Smoke30Frames.png-d03289e1b68d711a4ab7c9c156c3788f.s3tc.stex"
-path.etc2="res://.import/Smoke30Frames.png-d03289e1b68d711a4ab7c9c156c3788f.etc2.stex"
+path.s3tc="res://.import/vignette.png-8f3dc79fbcc5d0e6f4aace49a4fb5cd8.s3tc.stex"
+path.etc2="res://.import/vignette.png-8f3dc79fbcc5d0e6f4aace49a4fb5cd8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Smoke30Frames.png"
-dest_files=[ "res://.import/Smoke30Frames.png-d03289e1b68d711a4ab7c9c156c3788f.s3tc.stex", "res://.import/Smoke30Frames.png-d03289e1b68d711a4ab7c9c156c3788f.etc2.stex" ]
+source_file="res://textures/vignette.png"
+dest_files=[ "res://.import/vignette.png-8f3dc79fbcc5d0e6f4aace49a4fb5cd8.s3tc.stex", "res://.import/vignette.png-8f3dc79fbcc5d0e6f4aace49a4fb5cd8.etc2.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
