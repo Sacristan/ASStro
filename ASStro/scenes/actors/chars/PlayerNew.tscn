@@ -2,11 +2,11 @@
 
 [ext_resource path="res://_reference/Scripts/character_animation_tree.gd" type="Script" id=1]
 [ext_resource path="res://src/Player.gd" type="Script" id=2]
-[ext_resource path="res://mesh/HandR.glb" type="PackedScene" id=3]
+[ext_resource path="res://mesh/asstronaut/HandR.glb" type="PackedScene" id=3]
 [ext_resource path="res://RobotBody.tscn" type="PackedScene" id=4]
-[ext_resource path="res://mesh/FootR.glb" type="PackedScene" id=5]
-[ext_resource path="res://mesh/HandL.glb" type="PackedScene" id=6]
-[ext_resource path="res://mesh/FootL.glb" type="PackedScene" id=7]
+[ext_resource path="res://mesh/asstronaut/FootR.glb" type="PackedScene" id=5]
+[ext_resource path="res://mesh/asstronaut/HandL.glb" type="PackedScene" id=6]
+[ext_resource path="res://mesh/asstronaut/FootL.glb" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 height = 1.5
@@ -1751,7 +1751,7 @@ nodes/walk_and_brake_blend/node = SubResource( 33 )
 nodes/walk_and_brake_blend/position = Vector2( 80, 180 )
 nodes/walking_speed/node = SubResource( 34 )
 nodes/walking_speed/position = Vector2( -160, 80 )
-node_connections = [ "output", 0, "transition", "transition", 0, "IdleAnimation", "transition", 1, "walk_and_brake_blend", "transition", 2, "in_air_blend", "transition", 3, "TimeScale", "TimeScale", 0, "attack_state_machine", "in_air_blend", 0, "FallingAnimation", "in_air_blend", 1, "Attached to Wall Animation", "in_air_blend", 2, "RisingAnimation", "walk_and_brake_blend", 0, "walking_speed", "walk_and_brake_blend", 1, "BrakingAnimation", "walking_speed", 0, "WalkingAnimation" ]
+node_connections = [ "output", 0, "transition", "transition", 0, "IdleAnimation", "transition", 1, "walk_and_brake_blend", "transition", 2, "in_air_blend", "transition", 3, "TimeScale", "in_air_blend", 0, "FallingAnimation", "in_air_blend", 1, "Attached to Wall Animation", "in_air_blend", 2, "RisingAnimation", "walking_speed", 0, "WalkingAnimation", "TimeScale", 0, "attack_state_machine", "walk_and_brake_blend", 0, "walking_speed", "walk_and_brake_blend", 1, "BrakingAnimation" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=45]
 
