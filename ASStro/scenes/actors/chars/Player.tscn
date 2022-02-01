@@ -1945,7 +1945,7 @@ nodes/walk_and_brake_blend/node = SubResource( 33 )
 nodes/walk_and_brake_blend/position = Vector2( 80, 180 )
 nodes/walking_speed/node = SubResource( 34 )
 nodes/walking_speed/position = Vector2( -160, 80 )
-node_connections = [ "output", 0, "transition", "transition", 0, "IdleAnimation", "transition", 1, "walk_and_brake_blend", "transition", 2, "in_air_blend", "transition", 3, "TimeScale", "walk_and_brake_blend", 0, "walking_speed", "walk_and_brake_blend", 1, "BrakingAnimation", "TimeScale", 0, "attack_state_machine", "walking_speed", 0, "WalkingAnimation", "in_air_blend", 0, "FallingAnimation", "in_air_blend", 1, "Attached to Wall Animation", "in_air_blend", 2, "RisingAnimation" ]
+node_connections = [ "output", 0, "transition", "transition", 0, "IdleAnimation", "transition", 1, "walk_and_brake_blend", "transition", 2, "in_air_blend", "transition", 3, "TimeScale", "in_air_blend", 0, "FallingAnimation", "in_air_blend", 1, "Attached to Wall Animation", "in_air_blend", 2, "RisingAnimation", "TimeScale", 0, "attack_state_machine", "walk_and_brake_blend", 0, "walking_speed", "walk_and_brake_blend", 1, "BrakingAnimation", "walking_speed", 0, "WalkingAnimation" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=45]
 
@@ -1972,7 +1972,7 @@ environment = SubResource( 72 )
 [node name="Mesh" type="Spatial" parent="."]
 
 [node name="Body" type="Spatial" parent="Mesh"]
-transform = Transform( 0.661054, 0.750338, -3.27983e-08, 0, -4.37114e-08, -1, -0.750338, 0.661054, -2.88956e-08, -0.000154018, -0.0360047, 0.0450064 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.01, 0 )
 
 [node name="BodyMeshBase" type="Spatial" parent="Mesh/Body"]
 transform = Transform( -1, -8.74228e-08, 2.98023e-08, -2.98023e-08, -1.42109e-14, -1, 8.74228e-08, -1, 5.32907e-15, 4.76837e-07, -9.53674e-07, 2.24864 )
@@ -2013,37 +2013,37 @@ mesh = SubResource( 7 )
 material/0 = null
 
 [node name="RightFoot" type="Spatial" parent="Mesh"]
-transform = Transform( 1, 0, 0, 0, 0.916619, -0.399762, 0, 0.399762, 0.916619, 0.77, -1.55, -0.4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77, -1.645, 0 )
 
 [node name="Boot_New_Low" type="MeshInstance" parent="Mesh/RightFoot"]
-transform = Transform( -1.13632, 9.93402e-08, -4.3423e-15, 6.18051e-09, 0.0706969, -1.13412, -9.91477e-08, -1.13412, -0.0706969, 0.13, 0.492, 0.281 )
+transform = Transform( -1.13632, 9.93402e-08, -4.3423e-15, 6.18051e-09, 0.0706969, -1.13412, -9.91477e-08, -1.13412, -0.0706969, 0, 0.492, 0.281 )
 mesh = SubResource( 64 )
 skeleton = NodePath("")
 material/0 = null
 
 [node name="LeftFoot" type="Spatial" parent="Mesh"]
-transform = Transform( 1, 0, 0, 0, 0.963051, 0.269318, 0, -0.269318, 0.963051, -0.77, -1.619, 0.117204 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77, -1.619, 0 )
 
 [node name="Boot_New_Low001" type="MeshInstance" parent="Mesh/LeftFoot"]
-transform = Transform( -1.13632, -9.93403e-08, 4.3423e-15, 3.55271e-15, -1.19209e-07, -1.13632, 9.93403e-08, -1.13632, 1.19209e-07, -0.13, 0.5, 0.14 )
+transform = Transform( -1.13632, -9.93403e-08, 4.3423e-15, 3.55271e-15, -1.19209e-07, -1.13632, 9.93403e-08, -1.13632, 1.19209e-07, 0, 0.5, 0.14 )
 mesh = SubResource( 61 )
 skeleton = NodePath("")
 material/0 = null
 
 [node name="RightHand" type="Spatial" parent="Mesh"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.17703, -0.094471, -0.61898 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.414, -0.4, 0 )
 
 [node name="Cube" type="MeshInstance" parent="Mesh/RightHand"]
-transform = Transform( 0.378448, 0, 0, 0, 0.0782014, 0.189904, 0, -0.291852, 0.0508845, 0.2, 0, -0.672 )
+transform = Transform( -1.65425e-08, 0.21365, -0.139019, 0, 0.21365, 0.139019, 0.378448, 9.33896e-09, -6.07673e-09, 0, 0, -0.672 )
 mesh = SubResource( 55 )
 skeleton = NodePath("")
 material/0 = null
 
 [node name="LeftHand" type="Spatial" parent="Mesh"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.414, -0.400002, 0.513229 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.414, -0.4, 0 )
 
 [node name="Cube001" type="MeshInstance" parent="Mesh/LeftHand"]
-transform = Transform( -0.378448, -6.83659e-09, -1.66019e-08, 0, 0.291852, -0.0508845, 3.3085e-08, -0.0782014, -0.189904, -0.2, 0, -0.672 )
+transform = Transform( -1.65425e-08, 0, -0.196603, 0, 0.302147, 0, 0.378448, 0, -8.59379e-09, 0, 0, -0.672 )
 mesh = SubResource( 58 )
 skeleton = NodePath("")
 material/0 = null
