@@ -12,7 +12,6 @@
 [ext_resource path="res://ui/emojis/5.png" type="Texture" id=11]
 [ext_resource path="res://Fonts/GameFont_Header.tres" type="DynamicFont" id=12]
 
-
 [sub_resource type="VisualShaderNodeColorUniform" id=1]
 uniform_name = "ColorUniform"
 
