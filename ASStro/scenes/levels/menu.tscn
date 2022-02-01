@@ -95,6 +95,8 @@ current = true
 [node name="MenuUI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 1.0
+margin_bottom = 2.0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -102,11 +104,14 @@ __meta__ = {
 
 [node name="TextureRect2" type="TextureRect" parent="MenuUI"]
 material = SubResource( 23 )
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 4.0
+margin_bottom = 3.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 8 )
 expand = true
-stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
